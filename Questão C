@@ -1,0 +1,14 @@
+public static int gerarVetorSemRepeticao(int[] v, int tamV, int[] vsr) {
+    int tamVsr = 0;
+
+    for (int i = 0; i < tamV; i++) {
+        // Só adiciona se o elemento ainda não está em vsr
+        if (!contem(vsr, tamVsr, v[i])) {
+            vsr[tamVsr] = v[i];
+            tamVsr++;
+        }
+    }
+
+    return tamVsr;
+}
+
