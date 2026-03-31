@@ -1,0 +1,15 @@
+public static void ordenar(int[] v, int n) {
+    for (int i = 1; i < n; i++) {
+        int chave = v[i];  // elemento a ser inserido
+        int j = i - 1;
+
+        // Empurra para a direita elementos maiores que a chave
+        while (j >= 0 && v[j] > chave) {
+            v[j + 1] = v[j];
+            j--;
+        }
+
+        // Insere a chave na posição correta
+        v[j + 1] = chave;
+    }
+}
