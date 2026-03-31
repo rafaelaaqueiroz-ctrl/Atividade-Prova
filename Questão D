@@ -1,0 +1,20 @@
+public static void inverter(int[] v, int ini, int fim) {
+    while (ini < fim) {
+        int temp = v[ini];
+        v[ini] = v[fim];
+        v[fim] = temp;
+        ini++;
+        fim--;
+    }
+}
+public static void rotacionar(int[] v, int tam, int k) {
+    
+    k = k % tam;
+    if (k < 0) k += tam;  // k negativo → rotação à direita
+    if (k == 0) return;
+
+   
+    inverter(v, 0, k - 1);      // 1. Inverte início
+    inverter(v, k, tam - 1);    // 2. Inverte fim
+    inverter(v, 0, tam - 1);    // 3. Inverte tudo
+}
